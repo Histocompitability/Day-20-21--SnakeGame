@@ -2,7 +2,7 @@ from snake import Snake
 from turtle import Screen
 from food import Food
 from scoreboard import Scoreboard
-from boundrees import boundary
+from da_snake.boundrees import boundary
 
 screen = Screen()
 screen.setup(600, 600)
