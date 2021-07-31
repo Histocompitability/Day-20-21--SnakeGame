@@ -14,12 +14,17 @@ class Snake:
         self.head = self.block_bank[0]
 
     def create_snake(self):
-        for i in range(0, len(INITIAL_POSITION)):
-            t = Turtle("square")
-            t.color("white")
-            t.penup()
-            t.setpos(INITIAL_POSITION[i])
-            self.block_bank.append(t)
+        for position in INITIAL_POSITION:
+            self.create_block(position)
+
+    def create_block(self, position):
+        t = Turtle("square")
+        t.color("white")
+        t.penup()
+        t.setpos(position)
+        self.block_bank.append(t)
+    def extend_snake(self):
+        self.create_block(self.block_bank[-1].position())
 
     def move(self):
         for block_number in range(len(self.block_bank) - 1, 0, -1):
