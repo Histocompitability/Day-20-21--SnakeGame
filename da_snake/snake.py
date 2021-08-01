@@ -16,9 +16,12 @@ class Snake:
     def create_snake(self):
         for position in INITIAL_POSITION:
             self.create_block(position)
+            self.block_bank[0].shape("classic")
+            self.block_bank[0].shapesize(2, 1)
+
 
     def create_block(self, position):
-        t = Turtle("square")
+        t = Turtle("circle")
         t.color("white")
         t.penup()
         t.setpos(position)

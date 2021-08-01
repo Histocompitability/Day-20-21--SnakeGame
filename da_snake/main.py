@@ -38,7 +38,7 @@ while game_is_on:
         snake.extend_snake()
 
     # detect collision with a wall
-    if xcord >= 280 or xcord <= -280 or ycord >= 280 or ycord <= -280:
+    if xcord >= 290 or xcord <= -290 or ycord >= 290 or ycord <= -290:
         screen.update()
         game_is_on = False
         scoreboard.game_over()

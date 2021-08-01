@@ -10,7 +10,7 @@ class Food(Turtle):
         self.color("red")
         self.speed("fastest")
         x = random.randint(-14, 14) * 20
-        y = random.randint(-14, 14) * 20
+        y = random.randint(-13, 14) * 20
         self.goto(x=x, y=y)
 
     def refresh(self):
