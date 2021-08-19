@@ -10,13 +10,18 @@ class Snake:
 
     def __init__(self):
         self.block_bank = []
-        self.create_snake()
-        self.head = self.block_bank[0]
+        self.reset()
 
     def create_snake(self):
         for position in INITIAL_POSITION:
             self.create_block(position)
 
+    def reset(self):
+        for block in self.block_bank:
+            block.goto(600, 600)
+        self.block_bank.clear()
+        self.create_snake()
+        self.head = self.block_bank[0]
 
 
     def create_block(self, position):
