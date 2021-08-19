@@ -22,7 +22,7 @@ screen.onkey(snake.right, "Right")
 game_is_on = True
 food = Food()
 scoreboard = Scoreboard()
-scoreboard.write_score(scoreboard.counter_of_a_score)
+scoreboard.write_score()
 
 while game_is_on:
     snake.move()
@@ -32,8 +32,8 @@ while game_is_on:
     # food collision
     if snake.head.distance(food) < 9:
         print("om nom nom")
-        scoreboard.counter_of_a_score += 1
-        scoreboard.write_score(scoreboard.counter_of_a_score)
+        scoreboard.score += 1
+        scoreboard.write_score()
         food.refresh()
         snake.extend_snake()
 
