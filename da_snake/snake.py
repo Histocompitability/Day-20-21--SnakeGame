@@ -16,12 +16,11 @@ class Snake:
     def create_snake(self):
         for position in INITIAL_POSITION:
             self.create_block(position)
-            self.block_bank[0].shape("classic")
-            self.block_bank[0].shapesize(2, 1)
+
 
 
     def create_block(self, position):
-        t = Turtle("circle")
+        t = Turtle("square")
         t.color("white")
         t.penup()
         t.setpos(position)
@@ -30,13 +29,14 @@ class Snake:
         self.create_block(self.block_bank[-1].position())
 
     def move(self):
+        turtle.update()
+        time.sleep(FREQUENCY)
         for block_number in range(len(self.block_bank) - 1, 0, -1):
             xcord = self.block_bank[block_number - 1].xcor()
             ycord = self.block_bank[block_number - 1].ycor()
             self.block_bank[block_number].goto(xcord, ycord)
         self.head.fd(STEP_OF_A_SNAKE)
-        turtle.update()
-        time.sleep(FREQUENCY)
+
 
     def right(self):
         if self.head.heading() != 180:
